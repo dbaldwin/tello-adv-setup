@@ -268,18 +268,16 @@ Make sure you have a terminal or cmd window open.  You have changed directory to
 
 Open the script `tello_camera_no_fly.py`
 
-Lets look at the contents of this script.
+Let's look at the contents of this script.
 
 ```python
 from djitellopy import Tello
 import cv2
-
 ```
 
 We are importing our Tello package and the CV2 library
 
 ```python
-
 # Create Tello Object
 tello = Tello()
 
@@ -291,7 +289,6 @@ tello.streamon()
 
 # Get the frame reader
 frame_reader = tello.get_frame_read()
-
 ```
 
 In this section we are creating the Tello object, connecting to the Tello drone.  Recall the `connect` method sends the `command` command.  Next, initialize the video stream and get the frame reader.
@@ -340,7 +337,6 @@ Last we turn the video stream off on the Tello.
 * In the terminal window type the following:
 
 ```text
-
 python tello_camera_no_fly.py
 ```
 
