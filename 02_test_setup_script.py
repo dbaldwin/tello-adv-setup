@@ -1,6 +1,10 @@
 from djitellopy import Tello
 import time
 
+print("**************************")
+print("Make sure you are connected to the Tello Drone WiFi Network")
+print("**************************")
+
 tello = Tello()
 
 tello.connect()

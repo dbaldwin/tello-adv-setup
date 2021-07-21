@@ -10,18 +10,21 @@ def print_setup_instructions():
 
 try:
     import cv2
+    print("Successfully imported cv2")
 except:
     print("OpenCV is not installed")
     print_setup_instructions()
 
 try:
     from djitellopy import Tello
+    print("Succesfully imported Tello")
 except:
     print("DJITelloPy API is not installed")
     print_setup_instructions()
 
 try:
     import imutils
+    print("Successfully imported imutils")
 except:
     print("imutils is not installed")
     print_setup_instructions()
