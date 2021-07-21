@@ -56,6 +56,7 @@ This means you do not have python3 installed and I encourage you to enroll in th
 
 Alternatively you can download and install from the [Python.org site](https://www.python.org/downloads/).  Select your operating system and follow the instructions.
 
+
 ## Github Code and Creating a Python Virtual Environment
 
 What is a Python Virtual Environment?
@@ -201,6 +202,24 @@ We are going to install 2 packages:
 * Jupyter
 
 * DJITelloPy
+
+#### Running Test Setup Script
+
+Open a terminal window and run the following command to test the installation:
+
+```shell
+python 01_test_setup_script.py
+```
+
+If everything is installed you should see the following in the terminal window:
+
+```text
+Successfully imported cv2 version: 4.3.0
+Succesfully imported Tello
+Successfully imported imutils
+Successfully imported jupyter
+```
+
 
 ### Install Jupyter Notebook
 
@@ -386,17 +405,33 @@ In this last section we are going to cover a script that we will use in many of 
 
 The script is, `tello_script_runner.py`
 
-Before executing the `tello_script_runner.py` script, if you are on MacOS you must export a variable in the terminal window.
+The Droneblocks Tello Script Runner will run a user supplied Python file and takes care of a number of Tello details so you can focus on programming the Tello drone.
 
-The `tello_script_runner.py` script will create processes to execute capability such as viewing the video feed.  In a recent update to MacOS, Apple by default does not allow a Python program to fork additional processes.  This is a security feature to keep malicious programs from doing bad things, but it also keeps our program from doing good things!
+Look at the `template_user_script.py` as an example of an empty template.  There are two methods:
 
-To inform MacOS that it is ok to allow us to run the `tello_script_runner.py`, in a terminal window type the following:
+* init
 
-```text
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+* handler
+
+You just need to implement both of these.
+
+Look at the `sample_user_script.py` for a more complete example.
+
+To run the `sample_user_script.py` you could issue a command like the following in a terminal window:
+
+```shell
+python tello_script_runner.py --handler sample_user_script --fly --display-video
 ```
-This will not impact your system and it is only valid for the terminal window you executed it in.
 
+## Verify the communication to the Tello Drone
+
+Once you have all of the necessary libraries installed, start the Tello drone and connect to the Tello WiFi network.
+
+You can then execute the following script in a terminal window:
+
+```shell
+python 02_test_tello_setup_script.py
+```
 
 
 ## Conclusion

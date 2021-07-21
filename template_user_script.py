@@ -1,7 +1,3 @@
-import logging
-
-LOGGER = logging.getLogger()
-
 # User Configuration
 SAMPLE_CONFIG_ITEM = 42
 
@@ -17,7 +13,7 @@ def init(tello, fly_flag=False):
     :return: None
     :rtype:
     """
-    LOGGER.debug(f"Inside init method.  fly_flag: {fly_flag}, sample config item: {SAMPLE_CONFIG_ITEM}")
+    print(f"Inside init method.  fly_flag: {fly_flag}, sample config item: {SAMPLE_CONFIG_ITEM}")
 
 
 def handler(tello, frame, fly_flag=False):
@@ -33,4 +29,4 @@ def handler(tello, frame, fly_flag=False):
     :return: None
     :rtype:
     """
-    LOGGER.debug(f"Inside handler method.  fly_flag: {fly_flag}, sample config item: {SAMPLE_CONFIG_ITEM}")
+    print(f"Inside handler method.  fly_flag: {fly_flag}, sample config item: {SAMPLE_CONFIG_ITEM}")
