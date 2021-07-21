@@ -10,7 +10,7 @@ def print_setup_instructions():
 
 try:
     import cv2
-    print("Successfully imported cv2")
+    print(f"Successfully imported cv2 version: {cv2.__version__}")
 except:
     print("OpenCV is not installed")
     print_setup_instructions()
@@ -27,4 +27,11 @@ try:
     print("Successfully imported imutils")
 except:
     print("imutils is not installed")
+    print_setup_instructions()
+
+try:
+    import jupyter
+    print("Successfully imported jupyter")
+except:
+    print("jupyter is not installed")
     print_setup_instructions()
